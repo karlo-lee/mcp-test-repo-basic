@@ -1,0 +1,16 @@
+# Documentation workflow (#c62e16d603954b0c980bf56ac2e6e7ae)
+
+name: Documentation
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+jobs:
+  docs-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Print docs location
+        run: echo "Docs are in the docs/ folder."
