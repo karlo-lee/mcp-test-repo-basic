@@ -2,22 +2,22 @@
 
 class UserService {
   constructor() {
-    this.users = [];
+    this.userList = [];
     this.nextId = 1;
   }
 
   createUser(name, email) {
     const user = { id: this.nextId++, name, email };
-    this.users.push(user);
+    this.userList.push(user);
     return user;
   }
 
   getUser(id) {
-    return this.users.find(u => u.id === id);
+    return this.userList.find(u => u.id === id);
   }
 
   listUsers() {
-    return this.users;
+    return this.userList;
   }
 
   updateUser(id, data) {
@@ -28,9 +28,9 @@ class UserService {
   }
 
   deleteUser(id) {
-    const idx = this.users.findIndex(u => u.id === id);
+    const idx = this.userList.findIndex(u => u.id === id);
     if (idx === -1) return false;
-    this.users.splice(idx, 1);
+    this.userList.splice(idx, 1);
     return true;
   }
 }
