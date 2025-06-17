@@ -1,0 +1,20 @@
+# Documentation workflow (#d84f70885a594b1ca05b78974e62b182)
+name: Documentation Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Build docs
+      run: echo "Building documentation"
