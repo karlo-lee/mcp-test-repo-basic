@@ -1,0 +1,13 @@
+# Documentation workflow (#5b86810a47ca4527b7ef6ed8036a1f9d)
+name: Docs Workflow
+on:
+  push:
+    paths:
+      - 'docs/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Show structure
+      run: tree docs/
