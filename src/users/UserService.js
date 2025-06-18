@@ -6,7 +6,13 @@ class UserService {
   constructor() {
     this.users = [];
   }
+  validateUser(user) {
+    if (!user || typeof user.id !== 'number' || typeof user.name !== 'string' || typeof user.email !== 'string') {
+      throw new Error('Invalid user data');
+    }
+  }
   create(user) {
+    this.validateUser(user);
     this.users.push(user);
     return user;
   }
@@ -15,7 +21,10 @@ class UserService {
   }
   update(id, data) {
     const user = this.users.find(u => u.id === id);
-    if (user) Object.assign(user, data);
+    if (user) {
+      Object.assign(user, data);
+      this.validateUser(user);
+    }
     return user;
   }
   delete(id) {
