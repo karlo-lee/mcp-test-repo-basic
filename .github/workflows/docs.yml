@@ -1,0 +1,15 @@
+# Documentation workflow (#967fc4f6f4a040f88e2dc590c86358fa)
+
+name: Documentation
+on:
+  push:
+    paths:
+      - 'docs/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Example step
+        run: echo "Documentation build/check complete."
