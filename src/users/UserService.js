@@ -9,14 +9,23 @@ class UserService {
 
   // Create a new user
   createUser(name, email) {
-    const id = this.nextId++;
-    const user = new User(id, name, email);
-    this.users.set(id, user);
-    return user;
+    try {
+      const id = this.nextId++;
+      const user = new User(id, name, email);
+      this.users.set(id, user);
+      return user;
+    } catch (error) {
+      // Reset the ID counter if user creation fails
+      this.nextId--;
+      throw error;
+    }
   }
 
   // Read user by ID
   getUserById(id) {
+    if (!id || typeof id !== 'number') {
+      return null;
+    }
     return this.users.get(id) || null;
   }
 
@@ -32,18 +41,26 @@ class UserService {
       return null;
     }
     
-    if (updates.name) {
-      user.updateName(updates.name);
+    try {
+      if (updates.name) {
+        user.updateName(updates.name);
+      }
+      if (updates.email) {
+        user.updateEmail(updates.email);
+      }
+      
+      return user;
+    } catch (error) {
+      throw error;
     }
-    if (updates.email) {
-      user.updateEmail(updates.email);
-    }
-    
-    return user;
   }
 
   // Delete user
   deleteUser(id) {
+    if (!id || typeof id !== 'number') {
+      return false;
+    }
+    
     const user = this.users.get(id);
     if (user) {
       this.users.delete(id);
@@ -55,6 +72,15 @@ class UserService {
   // Get user count
   getUserCount() {
     return this.users.size;
+  }
+
+  // Check if email already exists
+  emailExists(email) {
+    if (!email || typeof email !== 'string') {
+      return false;
+    }
+    const normalizedEmail = email.trim().toLowerCase();
+    return Array.from(this.users.values()).some(user => user.email === normalizedEmail);
   }
 }
 
