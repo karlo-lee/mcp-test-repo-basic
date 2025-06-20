@@ -2,14 +2,15 @@
 
 class UserService {
   constructor() {
-    this.users = [];
+    // Use a Map to allow for easy conversion to Set or other collection types later
+    this.users = new Map();
   }
   create(user) {
-    this.users.push(user);
+    this.users.set(user.id, user);
     return user;
   }
   get(userId) {
-    return this.users.find(u => u.id === userId);
+    return this.users.get(userId);
   }
   update(userId, details) {
     const user = this.get(userId);
@@ -17,8 +18,11 @@ class UserService {
     return user;
   }
   delete(userId) {
-    const idx = this.users.findIndex(u => u.id === userId);
-    if(idx > -1) return this.users.splice(idx, 1)[0];
+    if(this.users.has(userId)) {
+      const deleted = this.users.get(userId);
+      this.users.delete(userId);
+      return deleted;
+    }
     return null;
   }
 }
