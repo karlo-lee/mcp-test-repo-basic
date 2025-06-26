@@ -1,0 +1,7 @@
+Welcome to the project!
+
+This is your initial hello.txt file.
+
+Project Identifier: fb014e9b1cf94d9aa0ec86dfb286bb7e
+
+Wishing you the best as you start your development journey!
