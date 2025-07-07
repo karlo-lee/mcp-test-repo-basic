@@ -1,1 +1,4 @@
-# mcp-test-repo-basic
+Project Documentation
+====================
+
+Project setup ID: 9457c89911a041edb2622a1043414465
