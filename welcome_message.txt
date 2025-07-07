@@ -1,0 +1,7 @@
+Hello and welcome to the project! 
+
+This is your friendly greeting to get started with your new project setup.
+
+Your project identifier is: 5cba3951f1bc45b4ac289a0e7b1bf6bf
+
+Happy coding!
