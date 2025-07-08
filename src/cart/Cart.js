@@ -1,0 +1,1 @@
+// c0d80d5cd8cc42bfaef8ca7f051c4530\nclass Cart {\n  constructor() {\n    this.items = [];\n  }\n  addItem(item) {\n    this.items.push(item);\n  }\n  removeItem(itemId) {\n    this.items = this.items.filter(item => item.id !== itemId);\n  }\n  getItems() {\n    return this.items;\n  }\n}\n\nmodule.exports = Cart;
