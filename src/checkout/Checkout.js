@@ -1,0 +1,1 @@
+// c0d80d5cd8cc42bfaef8ca7f051c4530\nclass Checkout {\n  constructor(cartService) {\n    this.cartService = cartService;\n  }\n  processCheckout(userId) {\n    const cartItems = this.cartService.getCart(userId);\n    // Process payment and order placement logic here\n    return {\n      success: true,\n      items: cartItems,\n    };\n  }\n}\n\nmodule.exports = Checkout;
