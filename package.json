@@ -1,0 +1,1 @@
+{\n  \"name\": \"shopping-cart-system\",\n  \"version\": \"1.0.0\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"jest\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"jest\": \"^27.0.0\"\n  }\n}
