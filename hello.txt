@@ -1,9 +1,1 @@
-Welcome to our exciting new project! 🎉
-
-This is the beginning of something great. We're thrilled to have you here as we embark on this development journey together.
-
-Project Identifier: bf7038ea9bbd4dd5a021810c3775e29f
-
-Feel free to explore, contribute, and make this project amazing!
-
-Happy coding! 💻✨
+Welcome to the project! Project ID: ae97cf743d7d442c93526181f0391723
