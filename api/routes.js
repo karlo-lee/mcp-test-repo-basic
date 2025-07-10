@@ -1,4 +1,10 @@
-// Routing configuration for user management API
-// 54e5d91c4ba54eb7b514d9698fdac7c7
+// Routing configuration for user management
+// Tracking hash: 029b2057916447b78c6c3d6889a17cc3
 
-// Placeholder for routing setup
+const express = require('express');
+const usersRouter = require('./users');
+
+const app = express();
+app.use('/users', usersRouter);
+
+module.exports = app;
