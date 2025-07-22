@@ -1,4 +1,10 @@
-// Routing configuration for user management API
-// 54e5d91c4ba54eb7b514d9698fdac7c7
+const express = require('express');
+const usersRouter = require('./users');
 
-// Placeholder for routing setup
+// Routing configuration
+// eca8e6306405440383656de74b14e598
+
+const app = express();
+app.use('/users', usersRouter);
+
+module.exports = app;
